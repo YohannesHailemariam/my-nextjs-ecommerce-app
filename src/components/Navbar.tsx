@@ -4,6 +4,7 @@ import { title } from "process";
 import Logo from "./Logo";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { Grid3X3, ShoppingBagIcon } from "lucide-react";
 
 const Navbar = () => {
 
@@ -45,7 +46,19 @@ const Navbar = () => {
                     }
                 </ul>
                 {/* icons */}
-                <p>Icons</p>
+                <div className="flex items-center gap-x-5 mr-10">
+                    <Link
+                        href={"/wishlist"}
+                        className="hover:text-black cursor-pointer duration-200 relative group">
+                        <ShoppingBagIcon />
+                        <span className="absolute top-0 -left-1 bg-zinc-800 text-zinc-100
+                        w-4 h-4 rounded-full text-xs flex items-center justify-center
+                        group-hover:bg-black font-semibold group-hover:text-white">
+                            0
+                        </span>
+                    </Link>
+                    <Grid3X3 />
+                </div>
             </div>
         </div>
     )
